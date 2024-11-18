@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII art generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <header class="header">
+        <img src="/static/logo.png" alt="ASCII-art generator">
+    </header>
+
+    <main class="content">
+        <div class="input">
+            <form action="ascii-art" method="POST">
+                <div class="left">
+                    <textarea name="input" class="input-message" placeholder="Enter your text
+here"  rows="8" cols="50">{{.Input}}</textarea><br><br>
+                </div>
+
+                <div class="right">
+                    <h2>Please select font:</h2>
+                    <label><input type="radio" name="banner" value="standard" 
+                        {{if eq .Font "standard.txt"}}
+                        checked
+                        {{end}}
+                        > standard</label> <br>
+                    <label><input type="radio" name="banner" value="shadow"
+                        {{if eq .Font "shadow.txt"}}
+                        checked
+                        {{end}}
+                        > shadow</label><br>
+                    <label><input type="radio" name="banner" value="thinkertoy" 
+                        {{if eq .Font "thinkertoy.txt"}}
+                        checked
+                        {{end}}
+                        > thinkertoy</label>
+                </div>
+
+                <button type="submit" class="input-submit">Generate ASCII art</button><br><br>
+            </form>
+        </div>
+        <div class="output">
+            <pre>{{.Output}}</pre>          
+        </div>
+    </main>
+    <footer class="footer">
+        <p><a href="https://01.gritlab.ax/intra/gritlab/school-curriculum/ascii-art-web" target="_blank">ascii-art-web</a>: Go curriculum project #3 by <a href="https://01.gritlab.ax/git/obalandi" target="_blank">Oleg Balandin</a> & <a href="https://01.gritlab.ax/git/asuharev" target="_blank">Anastasia Suhareva</a>. November, 2024</p>
+    </footer>
+
+</body>
+</html>
