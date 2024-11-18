@@ -74,10 +74,6 @@ func mainPageHandler(w http.ResponseWriter, r *http.Request) {
 	pageTemplate.ExecuteTemplate(w, "index.html", mainPage)
 }
 
-func aboutHandler(w http.ResponseWriter, r *http.Request) {
-	log.Fatal()
-}
-
 func asciiArtGenerate(mainpage *webPage) {
 	mainpage.Input = strings.ReplaceAll(mainpage.Input, "\r\n", "\\n")
 	if !isTextPrintable(mainpage.Input) {

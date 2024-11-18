@@ -42,12 +42,13 @@ func convertToAsciiArt(inputText, font string) string {
 	result := ""
 	bannerContent, err := readFileContent(fontDir + font)
 	// ################################################################
-	// ####################   ACHTUNG ABOVE!!!!!   ####################
+	// ###########   ACHTUNG ABOVE!!!!! (fontDir added)  ##############
 	// ################################################################
 
 	if err != nil {
 		return fmt.Sprintf("Error reading file %s: %v", font, err)
 	}
+
 	bannerContent = strings.ReplaceAll(bannerContent, "\r", "")
 	bannerLines := strings.Split(bannerContent, "\n")
 
