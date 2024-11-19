@@ -21,17 +21,10 @@ func main() {
 	http.HandleFunc("/", mainPageHandler)
 	http.HandleFunc("/ascii-art", mainPageHandler)
 
-	//http.ListenAndServe(":8080", nil)
-	// ################################################################
-	// ACHTUNG!!!!! CHANGED top line to the bottom lines ##############
-	// ################################################################
 	log.Println("Starting server on port 8080")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
 	}
-	// ################################################################
-	// ####################   ACHTUNG ABOVE!!!!!   ####################
-	// ################################################################
 }
 
 func mainPageHandler(w http.ResponseWriter, r *http.Request) {

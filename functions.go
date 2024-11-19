@@ -35,15 +35,8 @@ func readFileContent(filename string) (string, error) {
 
 func convertToAsciiArt(inputText, font string) string {
 	fontDir := "banners/"
-	// ################################################################
-	// ####################   ACHTUNG ABOVE!!!!!   ####################
-	// ################################################################
-
 	result := ""
 	bannerContent, err := readFileContent(fontDir + font)
-	// ################################################################
-	// ###########   ACHTUNG ABOVE!!!!! (fontDir added)  ##############
-	// ################################################################
 
 	if err != nil {
 		return fmt.Sprintf("Error reading file %s: %v", font, err)
