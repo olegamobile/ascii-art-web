@@ -14,37 +14,42 @@
     </header>
 
     <main class="content">
-        <div class="input">
+        <div class="interfaceblock">
             <form action="ascii-art" method="POST">
-                <div class="left">
-                    <textarea name="input" class="input-message" placeholder="Enter your text
-here"  rows="8" cols="50">{{.Input}}</textarea><br><br>
+                <div class="textinput">
+                    <label for="ascii-text">Please enter your text here:</label>
+                    <textarea id="ascii-text" name="input" required class="input-message" placeholder="Enter text for ASCII art generation..."  rows="8">{{.Input}}</textarea>
                 </div>
-
-                <div class="right">
-                    <h2>Please select font:</h2>
-                    <label><input type="radio" name="banner" value="standard" 
+                <br>
+                <div class="fontinput">
+                    Please select font:
+                    <label class="fontlabel"><input type="radio" name="banner" value="standard" 
                         {{if eq .Font "standard.txt"}}
                         checked
                         {{end}}
-                        > standard</label> <br>
-                    <label><input type="radio" name="banner" value="shadow"
+                        > standard</label> &nbsp;
+                    <label class="fontlabel"><input type="radio" name="banner" value="shadow"
                         {{if eq .Font "shadow.txt"}}
                         checked
                         {{end}}
-                        > shadow</label><br>
-                    <label><input type="radio" name="banner" value="thinkertoy" 
+                        > shadow</label> &nbsp;
+                    <label class="fontlabel"><input type="radio" name="banner" value="thinkertoy" 
                         {{if eq .Font "thinkertoy.txt"}}
                         checked
                         {{end}}
                         > thinkertoy</label>
                 </div>
 
-                <button type="submit" class="input-submit">Generate ASCII art</button><br><br>
+                <button type="submit" class="input-submit">Generate ASCII art</button>
             </form>
         </div>
-        <div class="output">
-            <pre>{{.Output}}</pre>          
+        <div class="interfaceblock output" {{if eq .Output ""}} style="display: none;"{{end}}>
+            <div class="outputheader">
+                <b>Generated ASCII Art</b>
+            </div>
+            <div class="result">
+                <pre>{{.Output}}</pre>
+            </div>       
         </div>
     </main>
     <footer class="footer">
