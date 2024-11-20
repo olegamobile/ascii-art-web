@@ -98,6 +98,7 @@ textarea {
    background-color: #307053;
    color: white;
    padding: 20px;
+   margin-bottom: 20px;
 }
 
 .outputheader {
@@ -151,7 +152,7 @@ textarea {
    text-align: center;
    height: 60px;
    color: white;
-   padding: 5px;
+   padding: 10px;
 }
 
 
