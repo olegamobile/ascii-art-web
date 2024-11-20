@@ -21,6 +21,11 @@ a {
    color: white;
 }
 
+img {
+   max-width: 100%;
+   height: auto;
+ }
+
 .interfaceblock {
    display: -webkit-flex;
    display: flex;
