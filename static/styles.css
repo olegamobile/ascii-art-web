@@ -109,10 +109,10 @@ textarea {
    -webkit-flex: 1;
    -ms-flex: 1;
    flex: 1;
-
    overflow-x: auto;
    font-family: monospace;
    background-color: #8bbdb7;
+   color: black;
    width: 100%;
    text-align: left;
    border-radius: 8px;
@@ -151,6 +151,7 @@ textarea {
    text-align: center;
    height: 60px;
    color: white;
+   padding: 5px;
 }
 
 
