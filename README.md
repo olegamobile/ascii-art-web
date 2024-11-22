@@ -33,6 +33,8 @@ To run the server:
 
 5. Open a web browser and navigate to the homepage `http://localhost:8080`
 
+6. Input may contain only [printable ASCII characters.](https://www.ascii-code.com/)
+
 ## Implementation Details
 
 The ASCII art generation algorithm on the server side works as follows:

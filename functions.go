@@ -15,14 +15,19 @@ func isSliceEmpty(inputSlice []string) bool {
 	return true
 }
 
-func isTextPrintable(text string) bool {
+func isTextPrintable(text string) (string, bool) {
+	var result = ""
 	for _, char := range text {
 		if char < 32 || char > 127 {
-			fmt.Println(char, int(char))
-			return false
+			if !strings.Contains(result, string(char)) {
+				result += string(char) + " "	
+			}
 		}
 	}
-	return true
+	if result !="" {
+		return result, true
+	}
+	return result, false
 }
 
 func readFileContent(filename string) (string, error) {

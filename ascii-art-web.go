@@ -69,8 +69,10 @@ func mainPageHandler(w http.ResponseWriter, r *http.Request) {
 
 func asciiArtGenerate(mainpage *webPage) {
 	mainpage.Input = strings.ReplaceAll(mainpage.Input, "\r\n", "\\n")
-	if !isTextPrintable(mainpage.Input) {
-		mainpage.Output = "Text is not printable. Please enter valid ASCII characters."
+	wrongChar, err := isTextPrintable(mainpage.Input)
+
+	if err {
+		mainpage.Output = "Text is not printable. Please enter valid ASCII characters.\nNon-printable: " + wrongChar
 	} else {
 		mainpage.Output = convertToAsciiArt(mainpage.Input, mainpage.Font)
 	}
