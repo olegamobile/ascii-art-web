@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Press Enter to stop the container "
 read -p ""
 echo "Running command \033[92mdocker stop ascii-app\033[0m"

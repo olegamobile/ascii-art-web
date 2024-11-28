@@ -1,3 +1,5 @@
+#!/bin/sh
+
 echo "Press Enter to run command \033[92m docker image build -f Dockerfile -t ascii .\033[0m and build an image"
 read -p ""
 
